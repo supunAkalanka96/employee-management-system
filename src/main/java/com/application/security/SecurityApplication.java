@@ -1,5 +1,6 @@
 package com.application.security;
 
+import com.application.security.FileUpload.FileStorageProperties;
 import com.application.security.entity.User;
 import com.application.security.repository.UserRepository;
 import org.modelmapper.ModelMapper;
@@ -7,9 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
+@EnableConfigurationProperties({
+		FileStorageProperties.class
+})
 public class SecurityApplication implements CommandLineRunner {
 
 	@Autowired
